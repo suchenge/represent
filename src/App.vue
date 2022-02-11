@@ -1,28 +1,23 @@
 <template>
-  <a-layout>
-    <Header/>
-    <a-layout>
-          <a-layout-sider :style="{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }">
-            <Menu/>
-          </a-layout-sider>
-        <a-layout-content :style="{ background: 'red' }">
-            1Content 2Content 3Content 4Content 5Content 6Content 7Content 8Content 9Content 10Content 11Content 12Content 13Content 14Content 15Content 16Content 17Content
-        </a-layout-content>
-    </a-layout>
-  </a-layout>
+	<a-layout>
+		<Header/>
+		<a-layout>
+			<Menu/>
+			<a-layout-content id="rp-content">
+				1Content 2Content 3Content 4Content 5Content 6Content 7Content 8Content 9Content 10Content 11Content
+				12Content 13Content 14Content 15Content 16Content 17Content
+			</a-layout-content>
+		</a-layout>
+	</a-layout>
 </template>
 
 <script>
-import { Header, Menu } from './components/system'
+import {Header, Menu} from './components/system'
 
 export default {
-  name: 'App',
-  components: {
-    Header, Menu
-  }
+	name: 'App',
+	components: {
+		Header, Menu
+	}
 }
 </script>
-
-<style>
-
-</style>
