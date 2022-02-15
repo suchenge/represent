@@ -5,7 +5,7 @@ import Router from "@/router";
 
 import 'ant-design-vue/dist/antd.css';
 import '@/assets/style/represent.css';
-import UserSetting from './components/userSetting.js';
+import UserSetting from './components/user-setting.js';
 
 Vue.config.productionTip = false;
 Vue.prototype.UserSetting = new UserSetting();
