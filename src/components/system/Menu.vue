@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import eventContainer from "../../event-container";
+import eventContainer from "@/event-container";
 
 export default {
 	name: "Menu",
