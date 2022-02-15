@@ -1,2 +1,3 @@
-export { default as Header } from './Header.vue'
-export { default as Menu } from './Menu.vue'
+export { default as Header } from './Header'
+export { default as Menu } from './Menu'
+export { default as Module } from './Module'

@@ -4,8 +4,10 @@
 		<a-layout>
 			<Menu/>
 			<a-layout-content id="rp-content">
-				1Content 2Content 3Content 4Content 5Content 6Content 7Content 8Content 9Content 10Content 11Content
-				12Content 13Content 14Content 15Content 16Content 17Content
+				
+				<a-layout-content class="router-view">
+					<router-view src="DashBoard"></router-view>
+				</a-layout-content>
 			</a-layout-content>
 		</a-layout>
 	</a-layout>

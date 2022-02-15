@@ -1,6 +1,6 @@
 <template>
 	<div id="rp-system-header">
-		<a-layout-header>
+		<a-layout-header >
 			<a-row type="flex">
 				<a-col flex="auto">
 					<a-icon type="menu" @click="toggleCollapsedMenu"/>
@@ -21,15 +21,14 @@
 					</div>
 				</a-col>
 				<a-col type="flex" justify="end">
-					<a-dropdown>
+					<a-dropdown >
 						<a-avatar
 									class="avatar"
 									@click="e => e.preventDefault()"
 									src="https://avatars.githubusercontent.com/u/14213616?v=4"/>
-						<a-menu slot="overlay">
+						<a-menu slot="overlay" :theme="theme" style="width: 150px;">
 							<a-menu-item>
-								<a-icon type="solution"/>
-								用户设置
+								<a-icon type="solution"/>用户设置
 							</a-menu-item>
 							<a-sub-menu>
 								<span slot="title"><a-icon type="global"/>语言切换</span>
@@ -49,14 +48,10 @@
 									Pусский
 								</a-menu-item>
 							</a-sub-menu>
-							<a-sub-menu>
+							<a-sub-menu @click="changeTheme">
 								<span slot="title"><a-icon type="bg-colors"/>样式切换</span>
-								<a-menu-item>
-									明亮
-								</a-menu-item>
-								<a-menu-item>
-									暗黑
-								</a-menu-item>
+								<a-menu-item key="light">明亮</a-menu-item>
+								<a-menu-item key="dark">暗黑</a-menu-item>
 							</a-sub-menu>
 							<a-menu-divider/>
 							<a-menu-item>
@@ -76,12 +71,21 @@ import eventContainer from "./eventContainer";
 
 export default {
 	name: "Header",
+	created() {
+		eventContainer.$on("toggleTheme", theme => this.theme = theme)
+		//eventContainer.$on("toggleCollapsed", () => this.collapsed = !this.collapsed);
+	},
 	data() {
-		return {}
+		return {
+			theme: this.UserSetting.theme
+		}
 	},
 	methods: {
 		toggleCollapsedMenu() {
 			eventContainer.$emit("toggleCollapsed");
+		},
+		changeTheme(e){
+			eventContainer.$emit("toggleTheme", e.key);
 		}
 	}
 }

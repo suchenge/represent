@@ -1,13 +1,13 @@
 <template>
-	<div id="rp-system-menu">
+	<div id="rp-system-menu" v-bind:style="{ width: this.collapsed ? '60px' : '250px'}">
 		<a-menu
 				mode="inline"
 				:inline-collapsed="collapsed"
-				:style="{ height: '100%' }"
+				:theme="theme"
 		>
 			<a-menu-item key="1">
 				<a-icon type="pie-chart"/>
-				<span>Option 1</span>
+				<router-link to="/DashBoard">仪表盘</router-link>
 			</a-menu-item>
 			<a-menu-item key="2">
 				<a-icon type="desktop"/>
@@ -33,9 +33,9 @@
 				</a-menu-item>
 			</a-sub-menu>
 			<a-sub-menu key="sub2">
-				<span slot="title"><a-icon type="appstore"/><span>Navigation Two</span></span>
+				<span slot="title"><a-icon type="appstore"/><span>系统管理</span></span>
 				<a-menu-item key="9">
-					Option 9
+					<router-link to="/Module">模块管理</router-link>
 				</a-menu-item>
 				<a-menu-item key="10">
 					Option 10
@@ -59,11 +59,13 @@ import eventContainer from "./eventContainer";
 export default {
 	name: "Menu",
 	created() {
+		eventContainer.$on("toggleTheme", theme => this.theme = theme)
 		eventContainer.$on("toggleCollapsed", () => this.collapsed = !this.collapsed);
 	},
 	data() {
 		return {
-			collapsed: true
+			collapsed: true,
+			theme: this.UserSetting.theme
 		};
 	}
 }

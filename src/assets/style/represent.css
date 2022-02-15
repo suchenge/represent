@@ -24,14 +24,20 @@
 
 #rp-system-header .avatar{
     line-height:44px;
+    cursor:pointer;
 }
 
-#rp-system-menu{
-    min-width:250px;
+#rp-system-menu {
+    z-index: 9999;
+    width:60px;
     overflow:auto;
     position: fixed;
     left: 0;
     height: calc(100vh - 48px);
+}
+
+#rp-system-menu .ant-menu{
+    height:100%;
 }
 
 #rp-system-menu .ant-menu-inline-collapsed{
@@ -48,9 +54,46 @@
 }
 
 #rp-content{
-    background-color:red;
+    background: rgba(255, 255, 255, 0.2);
     margin-left:60px;
-    height: calc(100vh - 48px);
+    padding:5px 10px 0 10px;
 }
 
+#rp-content .router-view{
+    margin:0 0;
+    height: calc(100vh - 53px);
+}
+
+#rp-content .ant-table-body{
+    height: calc(100vh - 125px);
+    overflow-y: scroll;
+}
+#rp-content .ant-breadcrumb{
+    margin-bottom:5px;
+}
+
+#rp-content .ant-divider{
+    font-size:14px;
+    margin: 0 0 5px 0;
+}
+#rp-content td{
+    padding:5px;
+}
+
+#rp-content th {
+    padding:5px;
+}
+
+#rp-content .ant-table-body-inner{
+
+}
+
+#rp-content .ant-table-body{
+    background-color: #FFFFFF;
+
+}
+
+#rp-content .ant-pagination{
+    margin:10px 0;
+}
 
