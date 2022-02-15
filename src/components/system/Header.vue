@@ -30,15 +30,15 @@
 							<a-menu-item>
 								<a-icon type="solution"/>用户设置
 							</a-menu-item>
-							<a-sub-menu>
+							<a-sub-menu @click="changeLocale">
 								<span slot="title"><a-icon type="global"/>语言切换</span>
-								<a-menu-item>
+								<a-menu-item key="zh_CN">
 									简体中文
 								</a-menu-item>
 								<a-menu-item>
 									繁體中文
 								</a-menu-item>
-								<a-menu-item>
+								<a-menu-item key="en_US">
 									English
 								</a-menu-item>
 								<a-menu-item>
@@ -86,6 +86,9 @@ export default {
 		},
 		changeTheme(e){
 			eventContainer.$emit("toggleTheme", e.key);
+		},
+		changeLocale(e){
+			eventContainer.$emit("changeLocale", e.key);
 		}
 	}
 }
