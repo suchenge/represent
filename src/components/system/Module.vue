@@ -50,13 +50,11 @@ export default {
 	},
 	data() {
 		return {
-			locale:'zhCN',
 			data,
 			columns,
 			menuVisible: false,
 			contentHeight: document.body.clientHeight - 170,
 			paginationOpt: {
-				locale:'zhCN',
 				showQuickJumper:true,
 				defaultCurrent: 1, // 默认当前页数
 				defaultPageSize: 30, // 默认当前页显示数据的大小

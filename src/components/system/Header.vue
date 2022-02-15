@@ -67,7 +67,7 @@
 </template>
 
 <script>
-import eventContainer from "./eventContainer";
+import eventContainer from "../../event-container";
 
 export default {
 	name: "Header",
