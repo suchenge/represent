@@ -42,6 +42,30 @@
     </a-form>
     <div class="search-result-list">
       Search Result List
+      <a-dropdown :trigger="['contextmenu']">
+        <div
+            :style="{
+        textAlign: 'center',
+        background: 'red',
+        height: '100px',
+        lineHeight: '200px',
+        color: '#777',
+      }"
+        >
+          Right Click on here
+        </div>
+        <a-menu slot="overlay">
+          <a-menu-item key="1">
+            1st menu item
+          </a-menu-item>
+          <a-menu-item key="2">
+            2nd menu item
+          </a-menu-item>
+          <a-menu-item key="3">
+            3rd menu item
+          </a-menu-item>
+        </a-menu>
+      </a-dropdown>
     </div>
   </div>
 </template>
