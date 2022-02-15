@@ -10,7 +10,7 @@
 			</a-breadcrumb>
 		</a-layout>
 		<a-dropdown :trigger="['contextmenu']" :visible="this.menuVisible">
-			<div class="router-container" @contextmenu="containerClick" @click="containerClick">
+			<div class="router-container" @contextmenu="containerRightClick" @click="containerClick">
 				<a-table size="middle" :columns="columns" :data-source="data" :pagination="paginationOpt" :scroll="{y:contentHeight}">
 					<a slot="action">快速查看</a>
 				</a-table>
@@ -41,18 +41,23 @@
 export default {
 	name: "Module",
 	methods: {
+		containerRightClick(){
+			this.menuVisible = true;
+		},
 		containerClick() {
-			this.menuVisible = !this.menuVisible;
+			this.menuVisible = false;
 		}
 	},
 	data() {
 		return {
+			locale:'zhCN',
 			data,
 			columns,
 			menuVisible: false,
 			contentHeight: document.body.clientHeight - 170,
 			paginationOpt: {
 				locale:'zhCN',
+				showQuickJumper:true,
 				defaultCurrent: 1, // 默认当前页数
 				defaultPageSize: 30, // 默认当前页显示数据的大小
 				total: 110, // 总数，必须先有
@@ -65,7 +70,6 @@ export default {
 				},
 				// 改变每页数量时更新显示
 				onChange: (current, size) => {
-					console.log(this.contentHeight);
 					this.paginationOpt.defaultCurrent = current;
 					this.paginationOpt.defaultPageSize = size;
 				}
