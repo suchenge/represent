@@ -8,70 +8,68 @@
 #rp-system-header .rp-system-header-quicksearch{
     margin:12px
 }
-
 #rp-system-header div.ant-select-selection-selected-value {
     line-height:22px;
 }
-
 #rp-system-header .anticon-menu{
     color: #FFFFFF;
     font-size: 18px;
 }
-
 #rp-system-header .ant-input{
     line-height:24px;
 }
-
 #rp-system-header .avatar{
     line-height:44px;
     cursor:pointer;
 }
-
 #rp-system-menu {
     z-index: 9999;
     width:60px;
-    overflow:auto;
+    overflow-y:auto;
     position: fixed;
     left: 0;
     height: calc(100vh - 48px);
 }
-
 #rp-system-menu .ant-menu{
     height:100%;
 }
-
 #rp-system-menu .ant-menu-inline-collapsed{
- width:60px;
+    width:60px;
 }
-
 #rp-system-menu .ant-menu-submenu-title {
     padding:0 22px !important;
 }
-
 #rp-system-menu .ant-menu-item {
     padding:0 22px !important;
     margin:0 !important;
 }
-
 #rp-content{
     background: rgba(255, 255, 255, 0.2);
     margin-left:60px;
     padding:5px 10px 0 10px;
 }
-
 #rp-content .router-view{
-    margin:0 0;
-    height: calc(100vh - 53px);
-}
 
+}
+#rp-content .ant-breadcrumb{
+    padding:5px 0 5px 5px;
+}
+#rp-content .router-container{
+    padding: 5px;
+    background: #fbfbfb;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    margin:0;
+    overflow-y:auto;
+    height: calc(100vh - 90px);
+}
+#rp-content .ant-table{
+    border-bottom: 1px solid #d9d9d9;
+}
 #rp-content .ant-table-body{
     height: calc(100vh - 125px);
     overflow-y: scroll;
 }
-#rp-content .ant-breadcrumb{
-    margin-bottom:5px;
-}
-
 #rp-content .ant-divider{
     font-size:14px;
     margin: 0 0 5px 0;
@@ -79,21 +77,17 @@
 #rp-content td{
     padding:5px;
 }
-
+#rp-content tr:nth-child(2n) {
+    background: #f8f8f8;
+}
+#rp-content .ant-table-tbody > tr > td{
+    border:0;
+}
 #rp-content th {
     padding:5px;
+    border-right: 1px solid #d9d9d9;
 }
-
-#rp-content .ant-table-body-inner{
-
-}
-
-#rp-content .ant-table-body{
-    background-color: #FFFFFF;
-
-}
-
-#rp-content .ant-pagination{
-    margin:10px 0;
+#rp-content .ant-table-pagination{
+    margin:10px 0 0 0;
 }
 

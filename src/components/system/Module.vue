@@ -1,7 +1,7 @@
 <template>
 	<a-layout>
 		<a-layout>
-			<a-breadcrumb separator="-">
+			<a-breadcrumb separator="/">
 				<a-breadcrumb-item>
 					<router-link to="/DashBoard">仪表盘</router-link>
 				</a-breadcrumb-item>
@@ -9,19 +9,16 @@
 				<a-breadcrumb-item>模块管理</a-breadcrumb-item>
 			</a-breadcrumb>
 		</a-layout>
-		<a-table	:columns="columns"
-					:data-source="data"
-					size="middle"
-					:pagination="paginationOpt"
-					:scroll="{y:contentHeight}"
-					:customRow="customClick">
-			<a slot="action">快速查看</a>
-		</a-table>
-		<a-menu :style="menuStyle" v-if="menuVisible">
-			<a-menu-item>查看</a-menu-item>
-			<a-menu-item>删除</a-menu-item>
-			</a-menu>
-	</a-layout>
+      <div class="router-container">
+        <a-table	:columns="columns"
+                  :data-source="data"
+                  size="middle"
+                  :pagination="paginationOpt"
+                  :scroll="{y:contentHeight}">
+          <a slot="action">快速查看</a>
+        </a-table>
+      </div>
+  </a-layout>
 </template>
 <script>
 export default {
@@ -37,13 +34,12 @@ export default {
 				left: "0",
 				border: "1px solid #eee"
 			},
-			contentHeight: document.body.clientHeight - 155,
+			contentHeight: document.body.clientHeight - 170,
 			paginationOpt:{
 				defaultCurrent: 1, // 默认当前页数
 				defaultPageSize: 30, // 默认当前页显示数据的大小
 				total: 110, // 总数，必须先有
 				showSizeChanger: true,
-			
 				pageSizeOptions: ["10", "15", "30", "50"],
 				showTotal: (total) => `共 ${total} 条`, // 显示总数
 				onShowSizeChange: (current, pageSize) => {
@@ -56,27 +52,9 @@ export default {
 					this.paginationOpt.defaultCurrent = current;
 					this.paginationOpt.defaultPageSize = size;
 				}
-			},
-			customClick: record => ({
-				on: {
-					contextmenu: e => {
-						e.preventDefault();
-						this.menuData = record;
-						this.menuVisible = true;
-						this.menuStyle.top = e.clientY + "px";
-						this.menuStyle.left = e.clientX + "px";
-						document.body.addEventListener("click", this.bodyClick);
-					}
-				}
-			})
+			}
 		};
 	}
-	, methods: {
-		bodyClick() {
-			this.menuVisible = false;
-			document.body.removeEventListener("click", this.bodyClick);
-		}
-	},
 }
 
 const columns = [

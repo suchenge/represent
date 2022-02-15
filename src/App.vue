@@ -4,7 +4,6 @@
 		<a-layout>
 			<Menu/>
 			<a-layout-content id="rp-content">
-				
 				<a-layout-content class="router-view">
 					<router-view src="DashBoard"></router-view>
 				</a-layout-content>
@@ -23,3 +22,4 @@ export default {
 	}
 }
 </script>
+
