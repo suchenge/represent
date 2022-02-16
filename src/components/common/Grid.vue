@@ -27,7 +27,7 @@ export default {
 	},
 	methods:{
 		watchClientHeight(){
-			this.contentHeight = document.body.clientHeight - 155;
+			this.contentHeight = document.body.clientHeight - 160;
 		},
 		contextMenuClick(){
 			this.contextMenuVisible = true;
@@ -42,7 +42,7 @@ export default {
 	data(){
 		return {
 			contextMenuVisible: false,
-			contentHeight: document.body.clientHeight - 155,
+			contentHeight: document.body.clientHeight - 160,
 			paginationOpt: Object.assign({
 				showQuickJumper:true,
 				defaultCurrent: 1, // 默认当前页数

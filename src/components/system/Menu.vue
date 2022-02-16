@@ -7,7 +7,7 @@
 		>
 			<a-menu-item key="1">
 				<a-icon type="pie-chart"/>
-        <span><router-link to="/DashBoard">仪表盘</router-link></span>
+				<router-link to="/DashBoard">仪表盘</router-link>
 			</a-menu-item>
 			<a-menu-item key="2">
 				<a-icon type="desktop"/>

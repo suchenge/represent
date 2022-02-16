@@ -1,13 +1,24 @@
 <template>
 	<a-layout>
 		<a-layout>
-			<a-breadcrumb separator="/">
-				<a-breadcrumb-item>
-					<router-link to="/DashBoard">仪表盘</router-link>
-				</a-breadcrumb-item>
-				<a-breadcrumb-item>系统管理</a-breadcrumb-item>
-				<a-breadcrumb-item>模块管理</a-breadcrumb-item>
-			</a-breadcrumb>
+			<a-row>
+				<a-col :span="8">
+					<a-page-header
+							title="模块管理"
+							@back="() => $router.go(-1)"
+					/>
+				</a-col>
+				<a-col>
+					<a-breadcrumb separator="/">
+						<a-breadcrumb-item>
+							<router-link to="/DashBoard">仪表盘</router-link>
+						</a-breadcrumb-item>
+						<a-breadcrumb-item>系统管理</a-breadcrumb-item>
+						<a-breadcrumb-item>模块管理</a-breadcrumb-item>
+					</a-breadcrumb>
+				</a-col>
+			</a-row>
+
 		</a-layout>
 		<Grid
 				:columns="this.columns"

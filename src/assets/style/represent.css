@@ -55,17 +55,18 @@
 }
 
 #rp-content {
-    background: rgba(255, 255, 255, 0.2);
+    background-color: #EFF2F5;
     margin-left: 60px;
     padding: 5px 10px 0 10px;
 }
 
-#rp-content .router-view {
-
+#rp-content .ant-page-header {
+    padding:0 0 5px 0;
 }
 
 #rp-content .ant-breadcrumb {
-    padding: 5px 0 5px 5px;
+    padding: 5px 0 5px 10px;
+    text-align: right;
 }
 
 #rp-content .router-container {
