@@ -1,14 +1,14 @@
 <template>
 	<a-layout>
 		<a-layout>
-			<a-row>
-				<a-col :span="8">
+			<a-row type="flex">
+				<a-col flex="auto">
 					<a-page-header
 							title="模块管理"
 							@back="() => $router.go(-1)"
 					/>
 				</a-col>
-				<a-col>
+				<a-col type="flex" justify="end">
 					<a-breadcrumb separator="/">
 						<a-breadcrumb-item>
 							<router-link to="/DashBoard">仪表盘</router-link>

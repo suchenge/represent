@@ -20,8 +20,13 @@
 						</a-input-group>
 					</div>
 				</a-col>
+				<a-col type="flex" class="badge">
+					<a-badge :count="0">
+						<a-icon type="bell" :style="{ fontSize: '22px', color: '#FFFFFF' }" />
+					</a-badge>
+				</a-col>
 				<a-col type="flex" justify="end">
-					<a-dropdown >
+					<a-dropdown>
 						<a-avatar
 									class="avatar"
 									@click="e => e.preventDefault()"

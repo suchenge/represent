@@ -6,8 +6,8 @@
 				:theme="theme"
 		>
 			<a-menu-item key="1">
-				<a-icon type="pie-chart"/>
-				<router-link to="/DashBoard">仪表盘</router-link>
+				<a-icon type="pie-chart"/><span>仪表盘</span>
+				<router-link to="/DashBoard"></router-link>
 			</a-menu-item>
 			<a-menu-item key="2">
 				<a-icon type="desktop"/>
