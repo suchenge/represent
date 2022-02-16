@@ -1,6 +1,6 @@
 <template>
 	<div id="rp-system-header">
-		<a-layout-header >
+		<a-layout-header>
 			<a-row type="flex">
 				<a-col flex="auto">
 					<a-icon type="menu" @click="toggleCollapsedMenu"/>

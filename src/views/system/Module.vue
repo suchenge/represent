@@ -38,7 +38,7 @@ export default {
 			data,
 			columns,
 			paginationOptions:{
-				defaultPageSize: 20,
+				defaultPageSize: 40,
 			},
 			contextMenuItems:[
 				{name: "添加", icon: "file-add", value:"add"},
