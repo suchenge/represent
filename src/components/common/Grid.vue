@@ -1,6 +1,6 @@
 <template v-show="this.columns.length > 0 && this.dataSource.length > 0">
 	<a-dropdown :trigger="['contextmenu']" :visible="this.contextMenuVisible">
-		<div class="gird-container" @contextmenu="this.contextMenuVisible = true" @click="this.contextMenuVisible = false">
+		<div class="gird-container" @contextmenu="this.contextMenuClick" @click="this.containerClick">
 			<a-table size="small" :columns="this.columns" :data-source="this.dataSource" :pagination="this.paginationOpt" :scroll="{y: this.contentHeight}">
 				<a slot="action">快速查看</a>
 			</a-table>
@@ -24,10 +24,22 @@ export default {
 		contextMenuItems: 		{ type: Array, 		default: () => [] }
 	},
 	methods:{
+		watchClientHeight(){
+			this.contentHeight = document.body.clientHeight - 165;
+		},
+		contextMenuClick(){
+			this.contextMenuVisible = true;
+		},
+		containerClick(){
+			this.contextMenuVisible = false;
+		}
+	},
+	created() {
+		setInterval(() => this.watchClientHeight(), 1000);
 	},
 	data(){
 		return {
-			contextMenuVisible:false,
+			contextMenuVisible: false,
 			contentHeight: document.body.clientHeight - 165,
 			paginationOpt: Object.assign({
 				showQuickJumper:true,
