@@ -9,7 +9,11 @@
 				<a-breadcrumb-item>模块管理</a-breadcrumb-item>
 			</a-breadcrumb>
 		</a-layout>
-		<Grid :columns="this.columns" :dataSource="this.data" :paginationOptions="this.paginationOptions"/>
+		<Grid
+				:columns="this.columns"
+				:dataSource="this.data"
+				:paginationOptions="this.paginationOptions"
+				:contextMenuItems="this.contextMenuItems"/>
 	</a-layout>
 </template>
 <script>
@@ -24,7 +28,14 @@ export default {
 			columns,
 			paginationOptions:{
 				defaultPageSize: 20,
-			}
+			},
+			contextMenuItems:[
+				{name: "添加", icon: "file-add", value:"add"},
+				{name: "查看", icon: "eye", value:"eye"},
+				{name: "编辑", value:"edit"},
+				{},
+				{name: "删除", icon: "delete", value:"delete", disabled: true}
+			]
 		};
 	}
 }

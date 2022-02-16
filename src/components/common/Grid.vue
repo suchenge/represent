@@ -5,11 +5,13 @@
 				<a slot="action">快速查看</a>
 			</a-table>
 		</div>
-		<a-menu slot="overlay" v-for="item in this.contextMenuItems" :key="item">
-			<a-menu-item :key="item.value" v-if="item.name">
-				<a-icon :type="item.icon" v-show="item.icon"></a-icon>{{item.name}}
-			</a-menu-item>
-			<a-menu-divider v-else/>
+		<a-menu slot="overlay">
+			<template v-for="item in this.contextMenuItems">
+				<a-menu-item :key="item.value" v-show="item.name" :disabled="item.disabled">
+					<a-icon :type="item.icon"/>{{item.name}}
+				</a-menu-item>
+				<a-menu-divider v-show="!item.name" :key="item.name"/>
+			</template>
 		</a-menu>
 	</a-dropdown>
 </template>
@@ -25,7 +27,7 @@ export default {
 	},
 	methods:{
 		watchClientHeight(){
-			this.contentHeight = document.body.clientHeight - 165;
+			this.contentHeight = document.body.clientHeight - 155;
 		},
 		contextMenuClick(){
 			this.contextMenuVisible = true;
@@ -40,7 +42,7 @@ export default {
 	data(){
 		return {
 			contextMenuVisible: false,
-			contentHeight: document.body.clientHeight - 165,
+			contentHeight: document.body.clientHeight - 155,
 			paginationOpt: Object.assign({
 				showQuickJumper:true,
 				defaultCurrent: 1, // 默认当前页数
