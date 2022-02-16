@@ -1,8 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-import { Module } from "@/components/system";
-import DashBoard from "@/components/DashBoard.vue";
+import { Module } from "@/views/system";
+import DashBoard from "@/views/DashBoard";
+import Login from '@/views/Login';
 
 Vue.use(VueRouter);
 
@@ -18,6 +19,11 @@ export default new VueRouter({
             name: "DashBoard",
             component: DashBoard
         }
-
+        ,{
+            path: "/Login",
+            name: "Login",
+            component: Login
+        }
     ]
 })
+
