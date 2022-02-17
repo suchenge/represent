@@ -7,10 +7,10 @@
 		</div>
 		<a-menu slot="overlay">
 			<template v-for="item in this.contextMenuItems">
-				<a-menu-item :key="item.value" v-show="item.name" :disabled="item.disabled">
-					<a-icon :type="item.icon"/>{{item.name}}
+				<a-menu-item :key="item.value" v-if="item.name" :disabled="item.disabled" @click="contextMenuItemClick">
+					<a-icon :type="item.icon" v-if="item.icon"/>{{item.name}}
 				</a-menu-item>
-				<a-menu-divider v-show="!item.name" :key="item.name"/>
+				<a-menu-divider v-if="!item.name" :key="item.name"/>
 			</template>
 		</a-menu>
 	</a-dropdown>
@@ -32,9 +32,14 @@ export default {
 		contextMenuClick(){
 			this.contextMenuVisible = true;
 		},
+		contextMenuItemClick(item) {
+			this.contextMenuVisible = false;
+			this.contextMenuItems.find(i => i.value === item.key)?.click?.call(this, item);
+		},
 		containerClick(){
 			this.contextMenuVisible = false;
-		}
+		},
+		
 	},
 	created() {
 		setInterval(() => this.watchClientHeight(), 1000);

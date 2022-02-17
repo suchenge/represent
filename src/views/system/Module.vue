@@ -1,38 +1,16 @@
 <template>
-	<a-layout>
-		<a-layout>
-			<a-row type="flex">
-				<a-col flex="auto">
-					<a-page-header
-							title="模块管理"
-							@back="() => $router.go(-1)"
-					/>
-				</a-col>
-				<a-col type="flex" justify="end">
-					<a-breadcrumb separator="/">
-						<a-breadcrumb-item>
-							<router-link to="/DashBoard">仪表盘</router-link>
-						</a-breadcrumb-item>
-						<a-breadcrumb-item>系统管理</a-breadcrumb-item>
-						<a-breadcrumb-item>模块管理</a-breadcrumb-item>
-					</a-breadcrumb>
-				</a-col>
-			</a-row>
-
-		</a-layout>
-		<Grid
+		<rp-grid
 				:columns="this.columns"
 				:dataSource="this.data"
 				:paginationOptions="this.paginationOptions"
 				:contextMenuItems="this.contextMenuItems"/>
-	</a-layout>
 </template>
 <script>
-import Grid from '@/components/common/Grid';
+import RpGrid from '@/components/common/Grid';
 
 export default {
 	name: "Module",
-	components: { Grid },
+	components: { RpGrid },
 	data() {
 		return {
 			data,
@@ -41,8 +19,8 @@ export default {
 				defaultPageSize: 40,
 			},
 			contextMenuItems:[
-				{name: "添加", icon: "file-add", value:"add"},
-				{name: "查看", icon: "eye", value:"eye"},
+				{name: "添加", icon: "file-add", value:"add", click:(item) => console.log(item)},
+				{name: "查看", icon: "eye", value:"eye", click:(item) => console.log(item)},
 				{name: "编辑", value:"edit"},
 				{},
 				{name: "删除", icon: "delete", value:"delete", disabled: true}

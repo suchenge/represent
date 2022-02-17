@@ -1,5 +1,5 @@
 <template>
-	<div id="rp-system-menu" v-bind:style="{ width: this.collapsed ? '60px' : '250px'}">
+	<div id="rp-system-menu">
 		<a-menu
 				mode="inline"
 				:inline-collapsed="collapsed"
@@ -54,18 +54,14 @@
 </template>
 
 <script>
-import eventContainer from "@/event-container";
-
 export default {
 	name: "Menu",
-	created() {
-		eventContainer.$on("toggleTheme", theme => this.theme = theme)
-		eventContainer.$on("toggleCollapsed", () => this.collapsed = !this.collapsed);
+	props:{
+		collapsed: {type: Boolean, default: true},
+		theme:{type:String},
 	},
 	data() {
 		return {
-			collapsed: true,
-			theme: this.UserSetting.theme
 		};
 	}
 }

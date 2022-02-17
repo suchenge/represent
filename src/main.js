@@ -4,7 +4,7 @@ import App from '@/App.vue';
 import Router from "./router";
 
 import 'ant-design-vue/dist/antd.css';
-import '@/assets/style/represent.css';
+import '@/assets/style/represent.less';
 import UserSetting from '@/models/user-setting.js';
 
 Vue.config.productionTip = false;

@@ -1,2 +1,5 @@
-export { default as Header } from './Header'
-export { default as Menu } from './Menu'
+export { default as RpHeader } from './Header';
+export { default as RpMenu } from './Menu';
+export { default as RpBody } from './Body';
+export { default as RpTitle } from './Title';
+export { default as RpContainer } from './Container';
