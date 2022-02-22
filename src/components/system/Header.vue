@@ -5,7 +5,7 @@
 				<a-icon type="menu" @click="toggleCollapsedMenu"/>
 			</a-col>
 			<a-col type="flex" class="badge">
-				<a-badge :count="9"><a-icon type="bell"/></a-badge>
+				<a-badge :count="19"><a-icon type="bell"/></a-badge>
 			</a-col>
 			<a-col type="flex" justify="end">
 				<a-dropdown>
